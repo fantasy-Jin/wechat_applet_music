@@ -1,0 +1,6 @@
+/* pages/menu-song/menu-song.wxss */
+.title {
+  padding: 18rpx;
+  font-size: 40rpx;
+  font-weight: 700;
+}

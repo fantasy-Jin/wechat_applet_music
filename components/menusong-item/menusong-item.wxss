@@ -1,0 +1,32 @@
+/* components/menusong-item/menusong-item.wxss */
+.list {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  position: relative;
+}
+.list .left {
+  font-size: 30rpx;
+}
+.list .right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+.list .right .info {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  color: #666;
+}
+.list .right .info .sqIcon {
+  width: 38rpx;
+  height: 22rpx;
+  margin-right: 10rpx;
+}
+.dt {
+  position: absolute;
+  right: 40rpx;
+  color: #222;
+}

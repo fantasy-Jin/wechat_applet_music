@@ -1,0 +1,8 @@
+<!--pages/search-detail/search-detail.wxml-->
+<van-search
+  value="{{ search_value }}"
+  shape="round"
+  background="#fafafa"
+  placeholder="请输入搜索关键词"
+  bindtap="onSearchTap"
+/>

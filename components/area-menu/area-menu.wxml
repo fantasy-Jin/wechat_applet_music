@@ -1,0 +1,16 @@
+<!--components/area-menu/area-menu.wxml-->
+<area-header areaTitle="{{menuTitle}}"  bind:moreTap="onMoreTap"/>
+
+<scroll-view 
+  enable-flex 
+  scroll-x 
+  class="menu-list"
+  style="width: {{screenWidth}}px;"
+ >
+  <block wx:for="{{menuList}}" wx:key="id">
+  <view class="item">
+    <hotlist-item itemData="{{item}}"></hotlist-item>
+  </view>
+  </block>
+</scroll-view>
+

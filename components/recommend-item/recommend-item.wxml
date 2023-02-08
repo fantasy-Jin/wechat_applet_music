@@ -1,0 +1,13 @@
+<!--components/recommend-ltem/recommend-item.wxml-->
+<view class="recommendItem" bindtap="onSongItemTap">
+  <view class="left">
+    <image class="image"  src="{{itemData.al.picUrl}}"></image>
+    <view class="info">
+      <view class="name">{{itemData.name}}</view>
+      <view class="singer">{{itemData.ar[0].name}}</view>
+    </view>
+  </view>
+  <view class="right">
+    <van-icon name="arrow" />
+  </view>
+</view>

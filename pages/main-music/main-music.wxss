@@ -1,0 +1,32 @@
+/* pages/main-music/main-music.wxss */
+page {
+  --search-background-color: #fff;
+  --search-padding: 10px 0;
+  box-sizing: border-box;
+  background-color: #fafafa;
+  padding: 0 24rpx;
+  /* width: 100%; */
+}
+.swiper {
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.banner-image {
+  width: 100%;
+}
+/* .hot-list {
+  display: flex; 
+  white-space: nowrap;
+  margin-left: -24rpx;
+}
+.hot-list .item {
+  width: 220rpx;
+  display: inline-block;
+  margin-left: 24rpx;
+}
+.hot-list .item:last-of-type {
+  margin-right: 24rpx;
+} */
+.ranking {
+  padding-bottom: 40rpx;
+}

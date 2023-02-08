@@ -1,0 +1,14 @@
+/* components/area-menu/area-menu.wxss */
+.menu-list{
+  /* display: flex; */
+  white-space: nowrap;
+  margin-left: -24rpx;
+}
+.menu-list .item{
+  width: 220rpx;
+  display: inline-block;
+  margin-left: 24rpx;
+}
+.menu-list .item:last-of-type{
+  margin-right: 24rpx;
+}

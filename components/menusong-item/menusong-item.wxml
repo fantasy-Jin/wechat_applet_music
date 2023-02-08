@@ -1,0 +1,15 @@
+<!--components/menusong-item/menusong-item.wxml-->
+<wxs src="/utils/format.wxs" module="fmt" />
+<view class="list">
+  <view class="left">
+    {{index}}
+  </view>
+  <view class="right">
+    <view class="song">{{itemData.name}}</view>
+    <view class="info">
+      <image class="sqIcon" src="/assets/images/icons/sq_icon.png" />
+      <text class="singer">{{itemData.ar[0].name}}</text>
+    </view>
+  </view>
+  <view class="dt">{{fmt.formatTime(itemData.dt)}}</view>
+</view>

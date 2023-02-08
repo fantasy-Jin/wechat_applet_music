@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "area-header": "/components/area-header/area-header",
+    "recommend-item":"/components/recommend-item/recommend-item",
+    "area-menu":"/components/area-menu/area-menu",
+    "hotlist-item":"/components/hotlist-item/hotlist-item",
+    "ranking-item":"/components/ranking-item/ranking-item"
+  }
+}

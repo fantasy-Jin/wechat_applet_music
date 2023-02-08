@@ -1,0 +1,41 @@
+<!--pages/video-detail/video-detail.wxml-->
+<!-- <text>pages/video-detail/video-detail.wxml==={{mvId}}</text> -->
+<wxs src="/utils/format.wxs" module="fmt"></wxs>
+<view class="video-content">
+  <video 
+    src="{{mvUrl.url}}" 
+    autoplay 
+    referrer-policy="origin" 
+    show-mute-btn
+    enable-play-gesture
+    danmu-list="{{danmuList}}"
+   />
+</view>
+<scroll-view class="scrollY" scroll-y>
+  <view class="video-detail">
+    <view class="tital">{{mvDetail.name}}</view>
+    <view class="artistName">{{mvDetail.artistName}}</view>
+    <view class="moreinfo">{{fmt.fmtCount(mvDetail.playCount)}}次播放 - {{mvDetail.publishTime}}</view>
+  </view>
+  <view class="recommend">
+    <view class="text">推荐视频</view>
+    <block wx:for="{{recommendList}}" wx:key="vid">
+      <view class="videoList">
+        <view class="left">
+          <image mode="widthFix" src="{{item.coverUrl}}"></image>
+          <view class="playCount">
+            {{fmt.fmtCount(item.playTime)}}
+          </view>
+        </view>
+        <view class="right">
+          <view class="title">
+            {{item.title}}
+          </view>
+          <view class="userName">
+            {{item.creator[0].userName}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>

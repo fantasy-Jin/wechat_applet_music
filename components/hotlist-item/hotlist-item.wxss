@@ -1,0 +1,38 @@
+/* components/hotlist-item/hotlist-item.wxss */
+.hotItem{
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+.hotItem .top{
+  position: relative;
+  overflow: hidden;
+}
+.hotItem .top .image{
+  width: 100%;
+  border-radius:24rpx ;
+}
+.hotItem .top .count{
+  position: absolute;
+  bottom: 12rpx;
+  right: 4rpx;
+  padding: 4rpx;
+  color: #fff;
+  font-size: 24rpx;
+  background-color:rgba(0,0, 0, .5);
+  border-radius: 9rpx;
+  overflow: hidden;
+}
+.bottom{
+  display: inline;
+  width: 100%;
+  font-size: 26rpx;
+
+  /* 显示两行 */
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "更多歌单",
+  "usingComponents": {
+    "area-header": "/components/area-header/area-header",
+    "hotlist-item":"/components/hotlist-item/hotlist-item"
+  }
+
+}

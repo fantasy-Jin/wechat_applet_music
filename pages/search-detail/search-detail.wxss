@@ -1,0 +1,8 @@
+/* pages/search-detail/search-detail.wxss */
+page{
+  --search-background-color: #fff;
+  --search-padding:10px 0;
+  box-sizing: border-box;
+  background-color: #fafafa;
+  padding: 0 28rpx;
+}

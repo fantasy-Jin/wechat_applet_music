@@ -1,0 +1,16 @@
+<!--pages/menu-detail/menu-detail.wxml-->
+<view class="menu-list">
+  <block wx:for="{{menuList}}" wx:key="cat">
+    <area-header areaTitle="{{item.cat}}" hasMore="{{false}}" />
+    <view class="list">
+      <block 
+        wx:for="{{item.playlists}}"
+        wx:key="id" 
+        wx:for-item="iten">
+        <view class="item">
+          <hotlist-item itemData="{{iten}}" />
+        </view>
+      </block>
+    </view>
+  </block>
+</view>

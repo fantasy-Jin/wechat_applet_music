@@ -1,0 +1,13 @@
+<!--pages/music-play/music-play.wxml-->
+<view class="song-detail">
+  <view class="bg">
+    <image class="cover" mode="aspectFill" src="{{songDeatil.al.picUrl}}" />
+    <view class="blur"></view>
+  </view>
+  <nav-bar>
+    <view slot="center" class="tab">
+      jhhh
+    </view>
+  </nav-bar>
+
+</view>

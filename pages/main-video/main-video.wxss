@@ -1,0 +1,9 @@
+.videolist{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 10rpx;
+}
+.item{
+  width: 48%;
+}

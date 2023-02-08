@@ -1,0 +1,25 @@
+/* components/recommend-ltem/recommend-item.wxss */
+.recommendItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 0;
+}
+.recommendItem .left{
+  display: flex;
+}
+.recommendItem .left .image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 18rpx;
+}
+.recommendItem .left .info{
+  margin-left:12rpx ;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  color: #222;
+}
+.recommendItem .left .info .singer,.right{
+  font-size: 28rpx;
+  color:#666;
+}

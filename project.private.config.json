@@ -1,0 +1,57 @@
+{
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "JinMusic",
+  "setting": {
+    "compileHotReLoad": true,
+    "urlCheck": false
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "",
+          "pathName": "pages/main-video/main-video",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/video-detail/video-detail",
+          "query": "id=14580827",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "全部歌单",
+          "pathName": "pages/menu-detail/menu-detail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "歌曲列表",
+          "pathName": "pages/menu-song/menu-song",
+          "query": "type=ranking&key=newRanking",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "用户歌单",
+          "pathName": "pages/menu-song/menu-song",
+          "query": "type=menu&id=307496834",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "播放页",
+          "pathName": "pages/music-play/music-play",
+          "query": "id=66285",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "libVersion": "2.18.0"
+}

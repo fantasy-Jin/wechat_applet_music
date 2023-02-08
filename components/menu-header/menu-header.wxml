@@ -1,0 +1,27 @@
+<!--components/menu-header/menu-header.wxml-->
+<wxs src="/utils/format.wxs" module="fmt" />
+<view class="header">
+  <image class="bg-img" mode="aspectFill" src="{{itemData.coverImgUrl}}" />
+  <view class="bg-cover"></view>
+  <view class="infos">
+    <image class="cover" src="{{itemData.coverImgUrl}}" />
+    <view class="txt">
+      <view class="title">{{itemData.name}}</view>
+      <view class="creator">
+        <image class="avatar" src="{{itemData.creator.avatarUrl}}" />
+        <text class="nickname">{{itemData.creator.nickname}}</text>
+      </view>
+      <view class="brief">{{itemData.description}}</view>
+    </view>
+  </view>
+  <view class="tool">
+    <view class="left">
+      <image class="favor-icon" src="/assets/images/icons/favor_icon.png" />
+      <text class="count">{{fmt.fmtCount(itemData.subscribedCount)}}</text>
+    </view>
+    <view class="right">
+      <image class="share-icon" src="/assets/images/icons/share_icon.png" />
+      <text>分享</text>
+    </view>
+  </view>
+</view>
