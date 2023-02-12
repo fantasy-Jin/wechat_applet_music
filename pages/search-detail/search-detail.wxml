@@ -1,8 +1,52 @@
 <!--pages/search-detail/search-detail.wxml-->
-<van-search
-  value="{{ search_value }}"
-  shape="round"
-  background="#fafafa"
-  placeholder="请输入搜索关键词"
-  bindtap="onSearchTap"
-/>
+<van-search value="{{ searchValue }}" shape="round" background="#fafafa" placeholder="请输入搜索关键词" bind:change="onChange" bind:search="onSearch" />
+
+<view class="content" wx:if="{{!searchValue&&!isShowRes}}">
+  <view class="serchHistory" wx:if="{{historyData.length}}">
+    <view class="header">
+      <view class="title">搜索历史</view>
+      <view class="del" bindtap="delHistory">
+        <van-icon name="delete-o" />
+      </view>
+    </view>
+    <view class="historyList">
+      <block wx:for="{{historyData}}" wx:key="*this">
+        <view class="item" data-index="{{index}}" bindtap="historyTap">{{item}}</view>
+      </block>
+    </view>
+  </view>
+
+  <view class="hotSearch">
+    <view class="title"> 热门搜索 </view>
+    <view class="hotList">
+      <block wx:for="{{hotList}}" wx:key="first">
+        <view class="item" data-index="{{index}}" bindtap="hotItemTap"  >
+          <view class="index">{{index}}</view>
+          <view class="song">
+            <van-icon name="music-o" />
+            <text class="name">{{item.first}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="suggest" wx:elif="{{isChange&&!isShowRes}}">
+  <view class="list">
+    <block wx:for="{{suggestSong}}" wx:key="keyword">
+      <view class="item" data-index="{{index}}" bindtap="suggestTap">
+        <view class="serachIcon">
+          <van-icon name="search" />
+        </view>
+        <view class="keyword">
+           {{item.keyword}}
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class="result" wx:elif="{{isShowRes}}">
+  <block wx:for="{{searchResult}}" wx:key="id">
+    <menu-item data-index="{{index}}"  bindtap="songItemTap"  index="{{index}}"  itemData="{{item}}"  />
+  </block>
+</view>

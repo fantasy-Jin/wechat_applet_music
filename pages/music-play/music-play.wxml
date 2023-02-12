@@ -49,28 +49,22 @@
       </view>
       <view class="box">
         <van-popup show="{{ popupShow }}" closeable position="bottom" round custom-style="height: 60%; background:rgba(88,64,85,.9) " bind:close="onListTap">
-          <scroll-view 
-            class="prepare"
-            scroll-y 
-            scroll-with-animation
-          >
+          <scroll-view class="prepare" scroll-y scroll-with-animation>
             <view class="title">播放列表
               <van-icon name="arrow-down" />
             </view>
             <block wx:for="{{playSongList}}" wx:key="id">
-              <view 
-                class="item {{index===playSongIndex?'active':''}}" 
-                data-id="{{item.id}}"
-                data-index="{{index}}" 
-                bindtap="onlistTap"
-                
-               >
+              <view class="item {{index===playSongIndex?'active':''}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="onlistTap">
                 <view class="letf">
                   <van-icon name="music-o" />
-                  {{item.name}} - <text class="singer">{{item.ar[0].name}}</text>
+                  {{item.name}} - <text wx:if="{{item.ar[0].name}}" class="singer">{{item.ar[0].name}}</text>
+                  <text wx:else class="singer">{{item.artists[0].name}}</text>
                 </view>
-                <view class="right">
+                <view class="right" wx:if="{{item.dt}}">
                   {{fmt.formatTime(item.dt)}}
+                </view>
+                <view class="right" wx:else>
+                  {{fmt.formatTime(item.duration)}}
                 </view>
               </view>
 

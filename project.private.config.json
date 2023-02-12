@@ -49,6 +49,13 @@
           "query": "id=66285",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "search",
+          "pathName": "pages/search-detail/search-detail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

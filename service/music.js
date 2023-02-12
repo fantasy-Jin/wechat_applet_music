@@ -35,3 +35,25 @@ export function getTags() {
     url: "/playlist/hot",
   })
 }
+export function getSearchHot(){
+  return JCrequestdata.get({
+    url:'/search/hot'
+  })
+}
+export function getSearchSuggest(keywords){
+  return JCrequestdata.get({
+    url:'/search/suggest',
+    data:{
+      keywords,
+      type:'mobile'
+    }
+  })
+}
+export function getSearchResult(keywords){
+  return JCrequestdata.get({
+    url:'/search',
+    data:{
+      keywords
+    }
+  })
+}

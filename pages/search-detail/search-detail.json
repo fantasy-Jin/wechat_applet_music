@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "van-search": "@vant/weapp/search/index"
+    "van-search": "@vant/weapp/search/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "menu-item":"/components/menusong-item/menusong-item"
   },
   "navigationBarTitleText": "搜索"
 }

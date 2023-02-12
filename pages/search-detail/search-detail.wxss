@@ -6,3 +6,79 @@ page{
   background-color: #fafafa;
   padding: 0 28rpx;
 }
+
+.serchHistory{
+  /* overflow: hidden; */
+  margin-top: 10rpx;
+}
+.serchHistory .header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+.serchHistory .header .del{
+  margin-top: 20rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.serchHistory .title{
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.historyList{
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center ;
+  padding: 20rpx 0;
+}
+.historyList .item{
+ background-color: #fff;
+ padding: 20rpx;
+ border-radius: 24rpx;
+}
+.hotSearch{
+  box-sizing: border-box;
+  margin-top: 20rpx; 
+   background-color: rgba(255,255,255,.9);
+  border-radius: 24rpx;
+  padding:10rpx  20rpx;
+}
+.hotSearch .title{
+  font-size: 36rpx;
+  font-weight: bold;
+
+}
+.hotSearch .hotList .item{
+  display: flex;
+  align-items: center;
+  margin: 30rpx 0;
+}
+.hotSearch .hotList .item .index{
+  font-size: 40rpx;
+  font-weight: bold;
+  color: rgb(83, 56, 56);
+  margin-right: 30rpx;
+}
+.hotSearch .hotList .item .song{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.hotSearch .hotList .item .song .name{
+ margin-left: 4rpx;
+}
+.suggest{
+  /* background-color: #fff; */
+  padding: 20rpx;
+  margin-top: -20rpx;
+}
+.suggest .list .item{
+  display: flex;
+  align-items: center;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.suggest .list .item .keyword{
+  margin-left: 10rpx;
+}

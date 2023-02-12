@@ -120,7 +120,6 @@ const playerStore = new HYEventStore({
     },
     // 暂停/播放
     changerStatus(ctx) {
-      console.log(1);
       if (audioContext.paused) {
         audioContext.play()
         ctx.isPlaying = true
