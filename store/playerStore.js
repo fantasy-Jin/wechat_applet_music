@@ -25,7 +25,7 @@ const playerStore = new HYEventStore({
     currentLyric: "歌词加载中...",
     lyricIndex: 0,
     comments: [],
-    isFirstPlay:true,
+    isFirstPlay: true,
 
     // 当前播放的歌曲列表
     playSongList: [],
@@ -52,14 +52,15 @@ const playerStore = new HYEventStore({
       audioContext.stop()
       audioContext.src = `https://music.163.com/song/media/outer/url?id=${ctx.id}.mp3`
       audioContext.autoplay = true
-      if(ctx.isFirstPlay){
-        ctx.isFirstPlay=false
+      if (ctx.isFirstPlay) {
+        ctx.isFirstPlay = false
         this.dispatch("songPlaying")
       }
     },
     // 音乐播放监听
     songPlaying(ctx) {
       audioContext.onTimeUpdate(() => {
+        ctx.currentTime = audioContext.currentTime * 1000
         // 匹配歌词 
         if (!ctx.lyric.length) return
         let lyricIndex = ctx.lyric.length - 1
@@ -93,9 +94,10 @@ const playerStore = new HYEventStore({
       // 结束
       audioContext.onEnded(() => {
         if (audioContext.loop) return
+        this.dispatch("controlPlay")
       })
     },
-    controlPlay(ctx,isNext = true) {
+    controlPlay(ctx, isNext = true) {
       let index = ctx.playSongIndex
       let length = ctx.playSongList.length
       switch (ctx.playModeIndex) {
@@ -111,10 +113,34 @@ const playerStore = new HYEventStore({
           index = Math.floor(Math.random() * length)
           break;
       }
-      const newSongId =ctx.playSongList[index].id
+      const newSongId = ctx.playSongList[index].id
       // 重置
       // 播放
-      this.dispatch("playSongWithId",newSongId)
+      this.dispatch("playSongWithId", newSongId)
+      ctx.playSongIndex = index
+    },
+    // 暂停/播放
+    changerStatus(ctx) {
+      if (audioContext.paused) {
+        audioContext.play()
+        ctx.isPlaying = true
+      } else {
+        audioContext.pause()
+        ctx.isPlaying = false
+      }
+    },
+
+    // 模式切换
+    modechange(ctx) {
+      let modeIndex = ctx.playModeIndex
+      modeIndex++
+      if (modeIndex === 3) modeIndex = 0
+      if (modeIndex === 1) {
+        audioContext.loop = true
+      } else {
+        audioContext.loop = false
+      }
+      ctx.playModeIndex = modeIndex
     },
   }
 })

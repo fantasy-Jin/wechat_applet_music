@@ -30,5 +30,5 @@ class JCrequest {
     })
   }
 }
-// export const JCrequestdata = new JCrequest('http://codercba.com:9002')
-export const JCrequestdata = new JCrequest('https://music.luckjin.cool')
+export const JCrequestdata = new JCrequest('http://codercba.com:9002')
+// export const JCrequestdata = new JCrequest('https://music.luckjin.cool')
