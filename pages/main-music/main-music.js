@@ -22,7 +22,10 @@ Page({
     recommendSongs: [],
     hotList: [],
     recommendList: [],
-    rankingInfos: {}
+    rankingInfos: {},
+    songDeatil:{},
+    isPlaying:false,
+
   },
   onLoad() {
     this.fetchBanner()
@@ -41,6 +44,9 @@ Page({
     // rankingStore.onState("upRanking",this.getRankingHanlder("upRanking"))
 
     rankingStore.dispatch("fetchRankList")
+
+
+    playerStore.onStates(["songDeatil","isPlaying"],this.getCurrentPlayer)
   },
   onUnload() {
     recommendStore.offState('recommendSongInfo', this.handleRecommendSongs)
@@ -73,6 +79,18 @@ Page({
     const currentIndex=event.currentTarget.dataset.index
     playerStore.setState("playSongList",this.data.recommendSongs)
     playerStore.setState("playSongIndex",currentIndex)
+  },
+
+  changSongStatus(){
+    playerStore.dispatch('changerStatus')
+  },
+  nextSong(){
+    playerStore.dispatch("controlPlay")
+  },
+  toPlayer(){
+    wx.navigateTo({
+      url: '/pages/music-play/music-play',
+    })
   },
 
   // ===========网络请求===========
@@ -112,6 +130,14 @@ Page({
       this.setData({
         rankingInfos: newInfos
       })
+    }
+  },
+  getCurrentPlayer({songDeatil,isPlaying}){
+    if(songDeatil){
+      this.setData({songDeatil})
+    }
+    if(isPlaying!==undefined){
+       this.setData({isPlaying})
     }
   }
 })

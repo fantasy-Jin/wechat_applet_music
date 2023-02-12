@@ -52,7 +52,7 @@ Page({
   },
   onUnload() {
     playerStore.offStates(["playSongList", "playSongIndex"], this.getPlayerList)
-    playerStore.offStates(["songDeatil", "currentTime", "durationTime", "isPlaying", "playModeIndex", "lyric", "currentLyric", "lyricIndex", "comments", "isFirstPlay"], this.getSongAllInfo)
+    playerStore.offStates([ "currentTime", "durationTime", "isPlaying", "playModeIndex", "lyric", "currentLyric", "lyricIndex", "comments", "isFirstPlay"], this.getSongAllInfo)
   },
   // ========== 事件监听 ==========
   onLeftTap() {

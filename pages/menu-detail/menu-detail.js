@@ -18,7 +18,7 @@ Page({
     this.fetchTags()
   },
   async fetchTags() {
-    const res = await getTgs()
+    const res = await getTags()
     const tags = res.tags
     //定义数组存储请求回来的 promise
     const allPromises = [];

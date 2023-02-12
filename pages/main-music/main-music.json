@@ -5,6 +5,7 @@
     "recommend-item":"/components/recommend-item/recommend-item",
     "area-menu":"/components/area-menu/area-menu",
     "hotlist-item":"/components/hotlist-item/hotlist-item",
-    "ranking-item":"/components/ranking-item/ranking-item"
+    "ranking-item":"/components/ranking-item/ranking-item",
+     "van-icon": "@vant/weapp/icon/index"
   }
 }

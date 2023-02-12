@@ -16,7 +16,7 @@
 <view class="recommend" wx:if="{{recommendSongs.length}}">
   <area-header areaTitle="推荐" bind:moreTap="onRcmMoreTap" />
   <block wx:for="{{recommendSongs}}" wx:key="id">
-    <recommend-item itemData="{{item}}" data-index="{{index}}" bindtap="rmdSongTap"  ></recommend-item>
+    <recommend-item itemData="{{item}}" data-index="{{index}}" bindtap="rmdSongTap"></recommend-item>
   </block>
 </view>
 
@@ -37,5 +37,27 @@
     <block wx:for="{{rankingInfos}}" wx:key="id">
       <ranking-item itemData="{{item}}" key="{{index}}" />
     </block>
+  </view>
+</view>
+<view class="play-bar-placeholder" wx:if="{{songDeatil.name}}"></view>
+<view class="musicBar"  wx:if="{{songDeatil.name}}">
+  <view class="left" bindtap="toPlayer">
+    <image
+       class="cover cover-anim" 
+       src="{{songDeatil.al.picUrl}}" 
+       style="animation-play-state: {{ isPlaying? 'running': 'paused' }};"
+    />
+    <view class="songName">{{songDeatil.name}}</view>
+    <view class="connect">-</view>
+    <view class="singer">{{songDeatil.ar[0].name}}</view>
+  </view>
+  <view class="right">
+    <view class="control" bindtap="changSongStatus">
+      <van-icon wx:if="{{isPlaying}}" class="pause" name="pause-circle-o" />
+      <van-icon wx:else class="pause" name="play-circle-o" />
+    </view>
+    <view class="nextSong" bindtap="nextSong">
+      <van-icon name="arrow" />
+    </view>
   </view>
 </view>

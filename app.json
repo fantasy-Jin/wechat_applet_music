@@ -16,6 +16,7 @@
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/main-music/main-music",

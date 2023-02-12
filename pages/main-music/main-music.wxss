@@ -30,3 +30,76 @@ page {
 .ranking {
   padding-bottom: 40rpx;
 }
+/* musicbar*/
+.musicBar{
+  position: fixed;
+  bottom: 10rpx;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  height: 44px;
+  width: 90%;
+  background-color: #fff;
+  display: flex;
+  padding:0 20rpx;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20rpx;
+  /* box-sizing: border-box; */
+  background-color: rgba(189, 155, 155, 0.98);
+}
+.musicBar .left{
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.musicBar .left .songName{
+  margin: 0 15rpx;
+  font-size: 30rpx;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+   color: #fff;
+}
+.musicBar .left .connect{
+  color: #eee;
+}
+.musicBar .left .singer{
+  margin-left: 15rpx;
+  font-size: 26rpx;
+  text-align: center;
+  color: #eee;
+  overflow: hidden;
+}
+.musicBar .cover{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  border: 2rpx solid pink;
+  position: relative;
+  top: -20rpx;
+  left:0;
+}
+.musicBar .right{
+  display: flex;
+  justify-content: space-around;
+  /* width: 30%; */
+  box-sizing: border-box;
+  padding-left: 10rpx;
+  text-align: center;
+  font-size: 60rpx;
+ color: #eee;
+}
+.musicBar .right .pause{
+  margin:0  15rpx;
+}
+@keyframes coverAnim{
+  0%{transform: rotate(0);}
+  100%{transform: rotate(306deg);}
+}
+.cover-anim{
+  animation: coverAnim 10s linear infinite;
+}
+.play-bar-placeholder{
+  height: 44px;
+}

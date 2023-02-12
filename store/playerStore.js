@@ -18,7 +18,7 @@ const playerStore = new HYEventStore({
     songDeatil: {},
     currentTime: 0,
     durationTime: 0,
-    isPlaying: false,
+    isPlaying: true,
     playModeIndex: 0, // 0:顺序播放 1:单曲循环 2:随机播放
 
     lyric: [],
@@ -78,19 +78,18 @@ const playerStore = new HYEventStore({
         ctx.currentLyric = currentLyric
       })
 
-      audioContext.onWaiting(() => {
-        wx.showLoading({
-          title: '疯狂敲代码中',
-          mask: true
-        })
-        audioContext.pause()
-      })
-      audioContext.onCanplay(() => {
-        if (ctx.isPlaying) {
-          wx.hideLoading()
-          audioContext.play()
-        }
-      })
+      // audioContext.onWaiting(() => {
+      //   wx.showLoading({
+      //     title: '疯狂敲代码中'
+      //   })
+      //   audioContext.pause()
+      // })
+      // audioContext.onCanplay(() => {
+      //   if (ctx.isPlaying) {
+      //     wx.hideLoading()
+      //     audioContext.play()
+      //   }
+      // })
       // 结束
       audioContext.onEnded(() => {
         if (audioContext.loop) return
@@ -121,6 +120,7 @@ const playerStore = new HYEventStore({
     },
     // 暂停/播放
     changerStatus(ctx) {
+      console.log(1);
       if (audioContext.paused) {
         audioContext.play()
         ctx.isPlaying = true
