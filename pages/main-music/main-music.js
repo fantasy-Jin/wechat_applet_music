@@ -10,6 +10,7 @@ import recommendStore from "../../store/recommend-list"
 import rankingStore, {
   rankingMap
 } from "../../store/ranking-list"
+import playerStore from "../../store/playerStore"
 
 const querySelectThrottle = throttle(querySelect, 100)
 // pages/main-music/main-music.js
@@ -67,6 +68,11 @@ Page({
     wx.navigateTo({
       url: '/pages/menu-song/menu-song?type=recommend',
     })
+  },
+  rmdSongTap(event){
+    const currentIndex=event.currentTarget.dataset.index
+    playerStore.setState("playSongList",this.data.recommendSongs)
+    playerStore.setState("playSongIndex",currentIndex)
   },
 
   // ===========网络请求===========

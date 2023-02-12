@@ -3,6 +3,7 @@ import {
   getPlaylist
 } from "../../service/music"
 import recommendStore from "../../store/recommend-list"
+import playerStore from "../../store/playerStore"
 
 // pages/menu-song/menu-song.js
 Page({
@@ -22,6 +23,12 @@ Page({
       this.data.key = options.key
       rankingStore.onState(this.data.key, this.hanlderRanking)
     } else if (this.data.type === 'menu') {
+      if (!this.data.songInfo.name) {
+        wx.showLoading({
+          title: '疯狂敲代码中',
+          mask: true
+        })
+      }
       this.data.id = options.id
       this.fetchSongInfo()
     } else if (this.data.type === "recommend") {
@@ -55,7 +62,12 @@ Page({
     this.setData({
       songInfo: res.playlist
     })
+    wx.hideLoading()
+  },
+  onSongItem(event) {
+    const index = event.currentTarget.dataset.index
+    playerStore.setState("playSongList", this.data.songInfo.tracks)
+    playerStore.setState("playSongIndex", index)
   }
-
 
 })

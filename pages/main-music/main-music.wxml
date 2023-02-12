@@ -16,7 +16,7 @@
 <view class="recommend" wx:if="{{recommendSongs.length}}">
   <area-header areaTitle="推荐" bind:moreTap="onRcmMoreTap" />
   <block wx:for="{{recommendSongs}}" wx:key="id">
-    <recommend-item itemData="{{item}}"></recommend-item>
+    <recommend-item itemData="{{item}}" data-index="{{index}}" bindtap="rmdSongTap"  ></recommend-item>
   </block>
 </view>
 

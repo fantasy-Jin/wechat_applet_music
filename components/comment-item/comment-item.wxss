@@ -1,0 +1,52 @@
+/* components/comment-item/comment-item.wxss */
+.comment-item{
+  display: flex;
+  flex-direction: column;
+  color: #ccc;
+  box-sizing: border-box;
+  background-color: rgba(193, 207, 221, 0.1);
+  margin: 20rpx;
+  padding: 20rpx;
+  border-radius: 18rpx;
+}
+.comment-item .user{
+  display: flex;
+  justify-content: space-between;
+}
+.comment-item .left{
+  display: flex;
+  align-items: center;
+}
+.comment-item .left .avatar{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  vertical-align: top;
+  margin-right: 16rpx;
+}
+.comment-item .left .info{
+  color: #aaa;
+  font-size: 24rpx;
+}
+.comment-item .left .info .name{
+  font-weight: bold;
+}
+.comment-item .left .info .time{
+  margin-top: 8rpx;
+  font-size: 22rpx;
+}
+.comment-item .right{
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #aaa;
+  text-align: center;
+}
+.comment-item .right .likedCount{
+  margin-left: 4rpx;
+}
+.comment-item .content{
+  padding: 10rpx 0;
+  font-size: 30rpx;
+  font-weight: bold;
+}

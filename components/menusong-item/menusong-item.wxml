@@ -1,6 +1,6 @@
 <!--components/menusong-item/menusong-item.wxml-->
 <wxs src="/utils/format.wxs" module="fmt" />
-<view class="list">
+<view class="list" bindtap="onSongItemTap">
   <view class="left">
     {{index}}
   </view>

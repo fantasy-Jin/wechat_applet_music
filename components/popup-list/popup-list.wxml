@@ -1,0 +1,10 @@
+<!--components/popup-list/popup-list.wxml-->
+<van-popup
+  show="{{ isShow }}"
+  closeable
+  position="bottom"
+  custom-style="height: 70%; background:rgba(88,64,85,.9) "
+  bind:close="onClose"
+>
+  hhhh
+</van-popup>

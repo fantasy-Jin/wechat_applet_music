@@ -15,7 +15,9 @@
 }
 .backIcon {
   vertical-align: middle;
+  margin-top: 3rpx;
   font-size: 38rpx;
+  font-weight: bold;
 }
 
 .default {
@@ -30,4 +32,6 @@
   align-items: center;
   flex: 1;
   color: #fff;
+  text-align: center;
+  font-weight: bold;
 }

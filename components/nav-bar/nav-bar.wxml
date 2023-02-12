@@ -1,7 +1,7 @@
 <!--components/nav-bar/nav-bar.wxml-->
 <view class="status" style="height: {{statusHeight}}px;"></view>
 <view class="nav-bar">
-  <view class="left">
+  <view class="left" bindtap="navLeftTap">
     <view class="slot">
       <slot name="left"></slot>
     </view>

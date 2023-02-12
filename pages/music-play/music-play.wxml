@@ -1,13 +1,103 @@
 <!--pages/music-play/music-play.wxml-->
-<view class="song-detail">
+<wxs src="/utils/format.wxs" module="fmt" />
+<view class="song-detail" wx:if="{{songDeatil.name}}">
   <view class="bg">
     <image class="cover" mode="aspectFill" src="{{songDeatil.al.picUrl}}" />
     <view class="blur"></view>
   </view>
-  <nav-bar>
+  <nav-bar bind:leftClick="onLeftTap">
     <view slot="center" class="tab">
-      jhhh
+      <block wx:for="{{tabItems}}" wx:key="*this">
+        <view class="tabItem {{currentIndex === index ? 'active': ''}}" data-index="{{index}}" bindtap="tabChange">{{item}}</view>
+      </block>
+
     </view>
   </nav-bar>
 
+  <!-- 歌曲内容 -->
+  <swiper style="height:{{contentHeight}}px;" bindchange="onSwiperTab" current="{{currentIndex}}">
+    <!-- 播放页 -->
+    <swiper-item class="music">
+      <image class="album" src="{{songDeatil.al.picUrl}}" mode="widthFix" />
+      <view class="info">
+        <view class="songName">
+          {{songDeatil.name}}
+        </view>
+        <view class="ar">
+          <van-icon name="manager" />
+          {{songDeatil.ar[0].name}}
+        </view>
+        <view class="aggregate">
+          <van-icon name="music" />
+          {{songDeatil.al.name}}
+        </view>
+      </view>
+      <view class="lyc">{{currentLyric}}</view>
+      <view class="process">
+        <slider block-size="{{12}}" class="slider" bindchange="sliderChange" bindchanging="sliderChanging" value="{{sliderValue}}" />
+      </view>
+      <view class="time">
+        <view class="current">{{fmt.formatTime(currentTime)}}</view>
+        <view class="total">{{fmt.formatTime(durationTime)}}</view>
+      </view>
+      <view class="control">
+        <image class="mode" bindtap="modechange" src="/assets/images/player/play_{{ playModeName}}.png" />
+        <image class="prev" bindtap="prevSong" src="/assets/images/player/play_prev.png" />
+        <image class="pause" src="/assets/images/player/play_{{isPlaying? 'pause':'resume'}}.png" bindtap="pauseSong" />
+        <image class="next" bindtap="nextSong" src="/assets/images/player/play_next.png" />
+        <image class="list" bindtap="onListTap" src="/assets/images/player/play_music.png" />
+      </view>
+      <view class="box">
+        <van-popup show="{{ popupShow }}" closeable position="bottom" round custom-style="height: 60%; background:rgba(88,64,85,.9) " bind:close="onListTap">
+          <scroll-view 
+            class="prepare"
+            scroll-y 
+            scroll-with-animation
+          >
+            <view class="title">播放列表
+              <van-icon name="arrow-down" />
+            </view>
+            <block wx:for="{{playSongList}}" wx:key="id">
+              <view 
+                class="item {{index===playSongIndex?'active':''}}" 
+                data-id="{{item.id}}"
+                data-index="{{index}}" 
+                bindtap="onlistTap"
+                
+               >
+                <view class="letf">
+                  <van-icon name="music-o" />
+                  {{item.name}} - <text class="singer">{{item.ar[0].name}}</text>
+                </view>
+                <view class="right">
+                  {{fmt.formatTime(item.dt)}}
+                </view>
+              </view>
+
+            </block>
+          </scroll-view>
+        </van-popup>
+      </view>
+    </swiper-item>
+    <!-- 歌词页 -->
+    <swiper-item>
+      <scroll-view class="lyric" scroll-y scroll-top="{{lyricScrollTop}}" scroll-with-animation>
+
+        <block wx:for="{{lyric}}" wx:key="time">
+          <view class="lyricItem {{index===lyricIndex?'active':''}}  " style="padding-top: {{index===0?(contentHeight/3):0}}px;padding-bottom: {{ index===(lyric.length-1)?(contentHeight/4):0 }}px; ">
+            {{item.text}}
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <!-- 评论页 -->
+    <swiper-item class="comments">
+      <scroll-view scroll-y class="comment-list">
+        <block wx:for="{{comments}}" wx:key="commentId">
+          <comment-item class="item" itemData="{{item}}" />
+        </block>
+        <view class="seat"></view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
 </view>

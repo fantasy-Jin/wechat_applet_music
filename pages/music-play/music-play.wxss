@@ -4,14 +4,183 @@
 } */
 .bg .cover,
 .bg .blur {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 }
 .bg .blur {
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(25px);
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(25px);
 }
+
+.tab {
+	display: flex;
+	align-items: center;
+	color: #aaa;
+}
+.tab .tabItem {
+	margin: 0 12rpx;
+}
+.tab .active {
+	color: #fff;
+}
+
+.music {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: 40rpx 60rpx;
+	color: #fff;
+}
+.music .album {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	border-radius: 18rpx;
+}
+.music .info {
+	font-size: 30rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	line-height: 60rpx;
+	color: #eee;
+}
+.music .info .songName {
+	font-size: 48rpx;
+	font-weight: 800;
+}
+.music .process .slider {
+	margin: 12rpx;
+	padding: 0;
+}
+.music .time {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 4rpx;
+	margin-top: -33rpx;
+	font-size: 24rpx;
+	color: #eee;
+}
+.music .lyc {
+	/* flex: 1; */
+	/* height: 80rpx; */
+	/* line-height: 80rpx; */
+	font-size: 28rpx;
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.music .control {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.music .control image {
+	width: 70rpx;
+	height: 70rpx;
+}
+.music .control .mode {
+	width: 80rpx;
+	height: 80rpx;
+}
+.music .control .pause {
+	width: 120rpx;
+	height: 120rpx;
+}
+/* 歌词 */
+.lyric {
+	height: 100%;
+	padding: 0 40rpx;
+	box-sizing: border-box;
+	overflow: hidden;
+	color: #aaa;
+	font-size: 32rpx;
+	text-align: center;
+	font-weight: bold;
+	/* padding-top: 40px; */
+}
+.lyric ::-webkit-scrollbar {
+	display: none;
+}
+.lyric .lyricItem {
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.lyric .lyricItem:first-of-type {
+	padding-top: 300px;
+}
+.lyric .lyricItem.active {
+	color: #fff;
+	font-size: 38rpx;
+}
+.comment-list {
+	height: 100%;
+	/* box-sizing: border-box; */
+}
+.comment-list ::-webkit-scrollbar {
+	display: none;
+}
+.comment-list .seat {
+	height: 20rpx;
+}
+
+.prepare {
+  height: 100%;
+	padding: 40rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.prepare ::-webkit-scrollbar{
+  display: none;
+}
+.box ::-webkit-scrollbar{
+  display: none;
+}
+.prepare .item {
+  height: 60rpx;
+	display: flex;
+	overflow: hidden;
+	align-items: center;
+  justify-content: space-between;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  overflow: hidden;
+	padding: 16rpx 14rpx;
+  margin: 18rpx 0;
+  font-size: 34rpx;
+  line-height: 60rpx;
+  color: #eee;
+  font-weight: bold;
+	background-color: rgba(193, 207, 221, 0.1);
+	border-radius: 20rpx;
+}
+.prepare .item:first-of-type{
+  margin-top: 35rpx;
+}
+.prepare .item .singer{
+  font-size: 28rpx;
+  color: #ccc;
+}
+.prepare .item .right{
+  font-size: 26rpx;
+  color:#aaa;
+}
+.prepare .item.active,
+.prepare .item.active .singer,
+.prepare .item.active .right{
+  color: #7e6d67;
+}
+
+

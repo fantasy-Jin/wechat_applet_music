@@ -1,0 +1,19 @@
+<!--components/comment-item/comment-item.wxml-->
+<view class="comment-item">
+  <view class="user">
+    <view class="left">
+      <image class="avatar" src="{{itemData.user.avatarUrl}}" mode=""/>
+      <view class="info">
+        <view class="name">{{itemData.user.nickname}}</view>
+        <view class="time">{{itemData.timeStr}}</view>
+      </view>
+    </view>
+    <view class="right">
+      <van-icon name="good-job-o" />
+      <view class="likedCount">{{itemData.likedCount}}</view>
+    </view>
+  </view>
+  <view class="content">
+     {{itemData.content}}
+  </view>
+</view>

@@ -9,6 +9,9 @@
   display: inline-block;
   margin-left: 24rpx;
 }
+.menu-list ::-webkit-scrollbar{
+  display: none;
+}
 .menu-list .item:last-of-type{
   margin-right: 24rpx;
 }
