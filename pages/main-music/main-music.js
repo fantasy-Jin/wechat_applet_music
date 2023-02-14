@@ -89,7 +89,7 @@ Page({
   },
   toPlayer(){
     wx.navigateTo({
-      url: '/pages/music-play/music-play',
+      url: '/packagePlayer/pages/music-play/music-play',
     })
   },
 
