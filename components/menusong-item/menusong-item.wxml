@@ -8,7 +8,7 @@
     <view class="song">{{itemData.name}}</view>
     <view class="info">
       <image class="sqIcon" src="/assets/images/icons/sq_icon.png" />
-      <text class="singer" wx:if="{{itemData.ar[0].nam}}" >{{itemData.ar[0].name}}</text>
+      <text class="singer" wx:if="{{itemData.ar[0].name}}" >{{itemData.ar[0].name}}</text>
       <text class="singer" wx:else>{{itemData.artists[0].name}}</text>
     </view>
   </view>

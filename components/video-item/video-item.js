@@ -24,7 +24,7 @@ Component({
     onVideoItemTap(){
       const itemId=this.properties.itemdata.id
       wx.navigateTo({
-        url: `/pages/video-detail/video-detail?id=${itemId}`,
+        url: `/packageVideo/pages/video-detail/video-detail?id=${itemId}`,
       })
     }
   }

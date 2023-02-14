@@ -2,12 +2,21 @@
   "pages": [
     "pages/main-music/main-music",
     "pages/main-video/main-video",
-    "pages/video-detail/video-detail",
-    "pages/search-detail/search-detail",
     "pages/menu-detail/menu-detail",
-    "pages/menu-song/menu-song",
-    "pages/music-play/music-play"
+    "pages/menu-song/menu-song"
   ],
+  "subPackages": [{
+    "root": "packagePlayer",
+    "pages": ["pages/music-play/music-play"]
+  }, {
+    "root": "packageVideo",
+    "pages": [
+      "pages/video-detail/video-detail"
+    ]
+  },{
+    "root": "packageSearch",
+    "pages": ["pages/search-detail/search-detail"]
+  }],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fafafa",
@@ -17,8 +26,7 @@
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "borderStyle": "white",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/main-music/main-music",
         "text": "音乐",
         "iconPath": "/assets/images/tabbar/music_normal.png",

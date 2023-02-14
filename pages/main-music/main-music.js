@@ -57,7 +57,7 @@ Page({
   // 搜索
   onSearchTap() {
     wx.navigateTo({
-      url: '/pages/search-detail/search-detail',
+      url: '/packageSearch/pages/search-detail/search-detail',
     })
   },
   // banner
